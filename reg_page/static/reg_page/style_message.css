@@ -1,0 +1,33 @@
+.message{
+    height: auto;
+    width: auto;
+    padding: 2px;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Open Sans', sans-serif;
+    text-shadow: 1px 2px var(--hight_green);
+    border: 0;
+    border-radius: 0px 0px 15px 15px;
+    margin: auto;
+    background: rgba(255,255,255,0.35);
+    width: 80%;
+}
+
+ul li.success{
+    color: #7CFC00;
+}
+
+
+
+ul li.error{
+    color: #ff1919;
+}
+
+.error{
+    color: #ff1919;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Open Sans', sans-serif;
+    text-shadow: 1px 2px var(--light_green);
+    margin-bottom: 10px;
+}

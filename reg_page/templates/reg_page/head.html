@@ -1,0 +1,16 @@
+{% load static %}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <link rel="stylesheet" href="{% static 'reg_page/style.css' %}">
+     <link rel="stylesheet" href="{% static 'reg_page/style_message.css' %}">
+     <link rel="stylesheet" href="{% static 'reg_page/style_form.css' %}">
+
+    {% if title %}
+        <title>Registration - {{ title }}</title>
+    {% else %}
+        <title>Registration page</title>
+    {% endif %}
+</head>

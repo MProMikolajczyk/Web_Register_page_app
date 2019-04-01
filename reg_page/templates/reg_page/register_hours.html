@@ -1,0 +1,24 @@
+{% extends 'reg_page/index.html' %}
+
+{% block register %}
+    <!--text -->
+    <p class="t3 c mt3 mb2 tsh">REGISTER YOUR VISIT TODAY</p>
+
+    <!--table-->
+    <div class="opacity">
+        <div class="page tsh c">
+            <a href="{% url 'register_page' month year %}"><p class="t3 mr5"> < </p></a>
+            <p class="t3 mt1 mb2 c">Choice empty hours</p>
+        </div>
+        <ul class="t3 tsh">
+            {% for hour in res_hours %}
+                {% if hour.1 == 'False' %}
+                    <a href="{% url 'register_hours_detail' month year day hour.0 %}"><li class="day">{{ hour.0 }}</li></a>
+                {% elif hour.1 == 'True' %}
+                    <li class="day_res">{{ hour.0 }}</li>
+                {% endif %}
+
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock register %}

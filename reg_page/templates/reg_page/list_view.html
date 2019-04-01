@@ -1,0 +1,46 @@
+{% extends 'reg_page/index.html' %}
+
+{% block register %}
+
+    <p class="c t2 mt1 mb1">Your registered visit :</p>
+
+    <!--table-->
+    <div class="opacity">
+
+        {% for object in objects %}
+            <div class="c mt1 mb1">
+                <form method="POST">
+                    <div class="form">
+                        <p class="c t6">{{object}}</p>
+                        {% csrf_token %}
+                        <button name="Delete" value="{{object.id}}">Delete</button>
+                    </div>
+                </form>
+            </div>
+
+        {% endfor %}
+
+        {% if is_paginated %}
+            <div class="c mt1 mb1">
+                {% if page_obj.has_previous %}
+                    <a class="t5" href="?page=1">First</a>
+                    <a class="t5" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                {% endif %}
+
+                {% for num in page_obj.paginator.page_range %}
+                    {% if page_obj.number == num %}
+                    <a class="t5" href="?page={{ num }}">{{ num }}</a>
+                    {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                    <a class="t5" href="?page={{ num }}">{{ num }}</a>
+                    {% endif %}
+                {% endfor %}
+
+                {% if page_obj.has_next %}
+                    <a class="t5" href="?page={{ page_obj.next_page_number }}">Next</a>
+                    <a class="t5" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+                {% endif %}
+            </div>
+
+        {% endif %}
+    </div>
+{% endblock register %}

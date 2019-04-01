@@ -1,0 +1,320 @@
+{% load static %}
+
+/* font */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Alex+Brush');
+
+/* main color */
+ :root{
+  --blue: #01b0fd;
+  --light_green: #a5a6a6;
+  --hight_green: #474e52;
+  --text: #fff;
+}
+
+/* text opction */
+.c{
+    text-align: center;
+}
+
+.l{
+    text-align: left;
+}
+
+.r{
+    text-align: right;
+}
+
+
+.t1{
+    font-size: 40px;
+    font-family: 'Alex Brush', cursive;
+    color: var(--text);
+}
+
+.t2{
+    font-size: 25px;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text);
+}
+
+.t3{
+    font-size: 40px;
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+    color: var(--text);
+}
+
+.t4{
+    font-size: 12px;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text);
+}
+
+.t5{
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text);
+}
+
+.t6{
+    font-size: 25px;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text);
+    text-shadow: 1px 2px var(--light_green);
+
+}
+
+.tsh{
+    text-shadow: 1px 2px var(--light_green);
+}
+/* margin opction */
+
+/* left */
+.ml1{
+    margin-left: 1rem;
+}
+
+.ml2{
+    margin-left: 2rem;
+}
+
+.ml5{
+    margin-left: 5rem;
+}
+
+/* right */
+.mr1{
+    margin-right: 1rem;
+}
+
+.mr2{
+    margin-right: 2rem;
+}
+
+.mr5{
+    margin-right: 5rem;
+}
+
+/* top */
+.mt1{
+    margin-top: 1rem;
+}
+
+.mt2{
+    margin-top: 2rem;
+}
+
+.mt3{
+    margin-top: 3rem;
+}
+
+/* bottom */
+.mb1{
+    margin-bottom: 1rem;
+}
+
+.mb2{
+    margin-bottom: 2rem;
+}
+
+/* constructor container */
+
+ul{
+  list-style-type: none;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+li{
+  display: inline-block;
+}
+
+body{
+    font-size: 25px;
+    font-family: 'Open Sans', sans-serif;
+    margin: auto;
+    text-align: justify;
+    background: var(--blue);
+}
+
+p{
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: var(--text);
+}
+
+a:hover{
+    text-shadow: 1px 1px 5px var(--text);
+}
+
+a:active{
+      outline: none;
+      border: 0px;
+}
+
+
+/* background */
+
+.width_background{
+    margin: auto;
+    max-width: 1620px;
+    height: auto;
+    position: relative;
+}
+
+.bg_img{
+    background: url('/static/reg_page/img/background_mon.jpg') no-repeat bottom/cover;
+    border: var(--light_green) solid 1px;
+    min-height: 953px;
+}
+
+/* header */
+header{
+    background: var(--hight_green);
+    width: 100%;
+    min-height: 90px;
+}
+
+/* header grid box */
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.gr1{
+    grid-column: 1;
+}
+
+.gr2{
+    grid-column: 2;
+}
+
+.gr3{
+    grid-column: 3;
+}
+
+/* after header line */
+.line{
+    background: var(--light_green);
+    height: 3px;
+}
+
+/* container */
+.container{
+    height: 100%;
+}
+
+/* grid in container. Position at register opacity table */
+.grid_c{
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+}
+
+.gr1_c{
+    grid-column: 1;
+}
+
+.gr2_c{
+    grid-column: 2;
+}
+
+.gr3_c{
+    grid-column: 3;
+}
+
+.opacity{
+    background: rgba(255,255,255,0.3);
+    width: 100%;
+    border: 1px solid var(--light_green);
+    border-radius: 50px 50px 75px 75px;
+    box-shadow: 2px 2px 7px 7px rgba(165,166,166,0.3);
+}
+
+/* day table  */
+.opacity ul{
+    margin: auto;
+    width: 90%;
+
+}
+.opacity ul:last-child{
+    margin-bottom: 3.6rem;
+}
+
+.opacity ul li{
+    border: 1px solid var(--light_green);
+    border-radius: 20%;
+    padding: 1.5rem 0rem;
+    width: 110px;
+    margin: 0.7rem auto;
+    box-shadow: 2px 2px 7px 7px rgba(165,166,166,0.3);
+    font-style: normal;
+}
+
+.past_day{
+    background: rgba(165,166,166,0.6);
+}
+
+.future_day_3{
+    background: rgba(255,255,255,0.65);
+}
+
+.future_day_2{
+    background: rgba(255,255,255,0.35);
+}
+
+.future_day_1{
+    background: rgba(255,255,255,0.15);
+}
+
+.future_day_0{
+    background: rgba(255,255,255,0.0);
+}
+
+.opacity ul li.day{
+    border: 1px solid var(--light_green);
+    border-radius: 50px;
+    padding: 1.5rem 0rem;
+    width: 90%;
+    margin: 0.7rem auto;
+    box-shadow: 2px 2px 7px 7px rgba(165,166,166,0.3);
+    font-style: normal;
+}
+
+.opacity ul li.day_res{
+    border: 1px solid var(--light_green);
+    border-radius: 50px;
+    padding: 1.5rem 0rem;
+    width: 90%;
+    margin: 0.7rem auto;
+    box-shadow: 2px 2px 7px 7px rgba(165,166,166,0.3);
+    font-style: normal;
+    background: rgba(255,255,255,0.6);
+}
+
+/* day registe link- hover */
+.opacity ul a:hover li{
+    background-color: var(--hight_green);
+}
+
+
+.page p{
+    display: inline-block;
+}
+
+/* footer */
+footer{
+    height: 1.8em;
+    width: 860px;
+    background: var(--hight_green);
+    margin: auto;
+    margin-top: 2rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}

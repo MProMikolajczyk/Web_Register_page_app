@@ -1,0 +1,46 @@
+{% extends 'reg_page/index.html' %}
+
+{% block register %}
+    <!--text -->
+    <p class="t3 c mt3 mb2 tsh">REGISTER YOUR VISIT TODAY</p>
+
+    <!--table-->
+    <div class="opacity">
+        <div class="page c tsh">
+            <a href="{% url 'register_page' beck_month beck_year %}"><p class="t3 ml2 mr5"> < </p></a>
+            <p class="t3 mt1 mb2">{{ month }} - {{year}}</p>
+            <a href="{% url 'register_page' next_month next_year %}"><p class="t3 mr2 ml5"> > </p></a>
+        </div>
+        <ul class="t3 tsh">
+            {% if actual_month == month and actual_year == year%}
+                {% for past_day in past_days %}
+                    <li class="past_day">{{ past_day }}</li>
+                {% endfor %}
+                {% for day in range_month_past %}
+                    {% if day.2 == 3 %}
+                        <a href="{% url 'register_hours' month year day.0 %}"><li class="future_day_3">{{ day.0 }}</li></a>
+                    {% elif day.2 == 2 %}
+                        <a href="{% url 'register_hours' month year day.0 %}"><li class="future_day_2">{{ day.0 }}</li></a>
+                    {% elif day.2 == 1 %}
+                        <a href="{% url 'register_hours' month year day.0 %}"><li class="future_day_1">{{ day.0 }}</li></a>
+                    {% elif day.2 == 0 %}
+                        <a href="{% url 'register_hours' month year day.0 %}"><li class="future_day_0">{{ day.0 }}</li></a>
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+            {% for day in get_list_days %}
+                {% if day.2 == 3 %}
+                    <a href="{% url 'register_hours' month year day.0 %}"><li class="future_day_3">{{ day.0 }}</li></a>
+                {% elif day.2 == 2 %}
+                    <a href="{% url 'register_hours' month year day.0 %}"><li class="future_day_2">{{ day.0 }}</li></a>
+                {% elif day.2 == 1 %}
+                    <a href="{% url 'register_hours' month year day.0 %}"><li class="future_day_1">{{ day.0 }}</li></a>
+                {% elif day.2 == 0 %}
+                    <a href="{% url 'register_hours' month year day.0 %}"><li class="future_day_0">{{ day.0 }}</li></a>
+                {% endif %}
+            {% endfor %}
+            {% endif %}
+        </ul>
+
+    </div>
+{% endblock register %}

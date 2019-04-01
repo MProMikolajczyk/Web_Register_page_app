@@ -1,0 +1,43 @@
+{% extends 'reg_page/index.html' %}
+
+{% block register %}
+    <!--text -->
+    <p class="t3 c mt3 mb2 tsh">REGISTER YOUR VISIT TODAY</p>
+
+    <!--table-->
+    <div class="opacity">
+        <div class="page c tsh">
+            <a href="{% url 'register_page' month year %}"><p class="t3 mr5"> < </p></a>
+            <p class="t3 mt1 mb2">Confirm your visit</p>
+        </div>
+        <ul class="t3 tsh">
+            {% if error %}
+                <p class="error">User don't exist in databases</p>
+            {% endif %}
+            {% for hour_id in res_hours %}
+                {% if hour_id.1 == 'False' %}
+                    <a href="{% url 'register_hours_detail' month year day hour_id.0 %}"><li class="day">{{ hour_id.0 }}</li></a>
+                {% elif hour_id.1 == 'True' %}
+                    <li class="day_res">{{ hour_id.0 }}</li>
+                {% endif %}
+                {% if hour_id.0 == hour and exist == 'no exist'%}
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="btw t2">
+                            {% if user.is_authenticated %}
+                            <button name="Register">Yes, Register</button>
+                            <button name="Cancel">Cancel</button>
+                                {% if user.is_superuser %}
+                                    <div class="form_list">
+                                        <p>Username:</p>
+                                        {{ form.username }}
+                                    </div>
+                                {% endif %}
+                            {% endif %}
+                        </div>
+                    </form>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock register %}

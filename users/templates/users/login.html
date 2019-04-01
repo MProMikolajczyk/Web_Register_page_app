@@ -1,0 +1,20 @@
+{% extends 'reg_page/index.html' %}
+
+{% block register %}
+    <p class="c t2 mt1 mb1">Log In:</p>
+
+    <!--table-->
+    <div class="opacity">
+        <form method="POST">
+            <div class="c t2 mt1 mb1 login">
+                {% csrf_token %}
+                {{form}}
+                <div class="btw">
+                    <button type="submit">Log In</button>
+                </div>
+            </div>
+        </form>
+        <p class="r t5 mr2 mb1"><a href="{% url 'password-reset' %}">forgot password ?</a></p>
+
+    </div>
+{% endblock register %}

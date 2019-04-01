@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    {% include 'reg_page/head.html' %}
+    {% block head%}
+    {% endblock head%}
+
+    <body>
+        <!-- background width-->
+        <div class="width_background">
+            <div class="bg_img">
+
+                <!-- header -->
+                <header>
+                    <div class="grid">
+
+                        <!--Logo-->
+                        <div class="gr1 t1 ml2 mt1 mb1"><a href="{% url 'home_page'%}">Registration Page</a></div>
+
+                        <!--nav-->
+                        {% include 'reg_page/nav.html' %}
+                        {% block nav%}
+                        {% endblock nav%}
+                    </div>
+
+                </header>
+                <div class="line"></div>
+
+                <!--messages place-->
+                {% if messages %}
+                <div class="message">
+                    <ul>
+                        {% for message in messages %}
+                            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+
+                <!-- container -->
+                <div class="container">
+                    <div class="grid_c">
+                        <div class="gr1_c t2 ml1">
+                            {% if user.is_authenticated %}
+                            login: {{ user }}
+                            {% endif %}
+                        </div>
+
+                        <div class="gr2_c">
+                            <!--inscripction on page-home-->
+                            {% block inscription %}
+                            {% endblock inscription %}
+
+
+                            <!-- register visit table -->
+                            {% block register %}
+                            {% endblock register %}
+                        </div>
+
+                        <!-- aside  -->
+                        {% include 'reg_page/aside.html' %}
+                        {% block aside%}
+                        {% endblock aside%}
+                    </div>
+                </div>
+                <!-- footer -->
+                {% include 'reg_page/footer.html' %}
+                {% block footer%}
+                {% endblock footer%}
+
+            </div>
+        </div>
+    </body>
+</html>

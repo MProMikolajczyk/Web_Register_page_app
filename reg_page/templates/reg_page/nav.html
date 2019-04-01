@@ -1,0 +1,24 @@
+<div class="gr2">
+    <ul class="mt3">
+        <li class="t2 c mr1"><a href="{% url 'home_page' %}">HOME</a></li>
+        {% if month and year %}
+            <li class="t2 c mr1"><a href="{% url 'register_page' month year %}">REGISTRATION VISIT</a></li>
+        {% endif %}
+        {% if user.is_authenticated %}
+            {% if user.is_superuser %}
+                <li class="t2 c mr1"><a href="{% url 'list_view' %}">ALL REGISTRATION</a></li>
+
+            {% else %}
+                <li class="t2 c mr1"><a href="{% url 'list_view' %}">YOUR REGISTRATION</a></li>
+            {% endif %}
+        {% endif %}
+    </ul>
+</div>
+<div class="gr3 t2 r mr1 mt3">
+    {% if user.is_authenticated %}
+    <a href="{% url 'logout' %}">logout</a>
+    {% else %}
+    <a href="{% url 'login' %}">login</a> /
+    <a href="{% url 'register' %}">register</a>
+    {% endif %}
+</div>
