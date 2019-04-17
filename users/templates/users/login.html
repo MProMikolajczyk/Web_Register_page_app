@@ -10,11 +10,11 @@
                 {% csrf_token %}
                 {{form}}
                 <div class="btw">
-                    <button type="submit">Log In</button>
+                    <button type="submit">Enter</button>
                 </div>
             </div>
         </form>
-        <p class="r t5 mr2 mb1"><a href="{% url 'password-reset' %}">forgot password ?</a></p>
+        <p class="r t5 mr2 mb1"><a href="{% url 'password-reset' %}">forgot password?</a></p>
 
     </div>
 {% endblock register %}
