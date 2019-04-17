@@ -2,13 +2,13 @@
 
 {% block register %}
     <!--text -->
-    <p class="t3 c mt3 mb2 tsh">REGISTER YOUR VISIT TODAY</p>
+    <p class="t3 c mt3 mb2 tsh">REGISTER YOUR APPOINTMENT TODAY</p>
 
     <!--table-->
     <div class="opacity">
         <div class="page tsh c">
             <a href="{% url 'register_page' month year %}"><p class="t3 mr5"> < </p></a>
-            <p class="t3 mt1 mb2 c">Choice empty hours</p>
+            <p class="t3 mt1 mb2 c">Choose the appointment time</p>
         </div>
         <ul class="t3 tsh">
             {% for hour in res_hours %}

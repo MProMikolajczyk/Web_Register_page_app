@@ -58,7 +58,7 @@ class ViewMixed(object):
         data_created = Event.objects.filter(data=data).first()
         time_created = Time.objects.filter(time=time, data_event_id=data_created.id).first()
         if time_created not in all_objects:
-            messages.success(request, "You'ar reservation visit !")
+            messages.success(request, "You have made an appointment successfully !")
             return create_time_Event.save()
         else:
             messages.error(request, "This hour was reserved! Try another")

@@ -2,6 +2,10 @@
 
 {% block inscription %}
     <p class="t3 c mt3 mb2 tsh">THIS VIEW IS ONLY A HOME PAGE.</p>
-    <p class="t3 c mt3 mb2 tsh">IT'S A PART OF REGISTER VISIT APPLICATION.</p>
-    <p class="t3 c mt3 mb2 tsh"> PLEAS CREATE YOUR ACCOUNT ANG REGISTER OUR VISIT</p>
+    <p class="t3 c mt3 mb2 tsh">IT'S A PART OF A REGISTRATION APPLICATION.</p>
+    {% if user.is_authenticated %}
+        <p class="t3 c mt3 mb2 tsh">WELCOME TO YOUR ACCOUNT. TO REGISTER A NEW VISIT PLEASE CHOOSE 'REGISTER A NEW APPOINTMENT'. TO CHECK YOUR CURRENT VISIT PLEASE GO TO 'MY APPOINTMENTS'</p>
+    {% else %}
+        <p class="t3 c mt3 mb2 tsh">PLEAS CREATE YOUR ACCOUNT TO REGISTER YOUR VISIT</p>
+    {% endif %}
 {% endblock inscription %}

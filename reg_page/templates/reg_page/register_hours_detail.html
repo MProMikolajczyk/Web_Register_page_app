@@ -2,13 +2,13 @@
 
 {% block register %}
     <!--text -->
-    <p class="t3 c mt3 mb2 tsh">REGISTER YOUR VISIT TODAY</p>
+    <p class="t3 c mt3 mb2 tsh">REGISTER YOUR APPOINTMENT TODAY</p>
 
     <!--table-->
     <div class="opacity">
         <div class="page c tsh">
             <a href="{% url 'register_page' month year %}"><p class="t3 mr5"> < </p></a>
-            <p class="t3 mt1 mb2">Confirm your visit</p>
+            <p class="t3 mt1 mb2">Confirm your appointment</p>
         </div>
         <ul class="t3 tsh">
             {% if error %}
@@ -25,7 +25,7 @@
                         {% csrf_token %}
                         <div class="btw t2">
                             {% if user.is_authenticated %}
-                            <button name="Register">Yes, Register</button>
+                            <button name="Register">CONFIRM</button>
                             <button name="Cancel">Cancel</button>
                                 {% if user.is_superuser %}
                                     <div class="form_list">
